@@ -16,9 +16,9 @@ def log_response(request, response_data):
     print(f"{datetime.now()} - BaseUrl: {request.base_url}")
     print(f"{datetime.now()} - Path: {request.path}")
     print(f"{datetime.now()} - Args: {request.args}")
-    print(f"Response data: {response_data}")
+    print(f"Response data:\n{response_data}")
     time.sleep(10) # expensive task
-    print(f"Request information registered (id: {request.args.get('id')})")
+    print(f"{datetime.now()} - Request information registered (id: {request.args.get('id')})")
 
 
 middlewares.configure_app(app, log_response)
